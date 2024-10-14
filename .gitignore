@@ -13,6 +13,8 @@ dist-ssr/
 
 # Environment files
 **/.env
+*.env
+.env/*
 *.local
 
 # Editor-specific files
