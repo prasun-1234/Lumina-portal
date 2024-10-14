@@ -1,5 +1,6 @@
+import PropTypes from 'prop-types';
 
-function LogoutSvg({className}) {
+function LogoutSvg({ className }) {
    return (
       <>
          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 20 22" fill="none" className={`${className}`}>
@@ -9,5 +10,9 @@ function LogoutSvg({className}) {
       </>
    )
 }
+
+LogoutSvg.propTypes = {
+   className: PropTypes.string,
+};
 
 export default LogoutSvg

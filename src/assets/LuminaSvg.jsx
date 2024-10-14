@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export default function LuminaSvg({className}) {
    return (
       <svg xmlns="http://www.w3.org/2000/svg" width="136" height="39" viewBox="0 0 136 39" fill="none" className={className}>
@@ -42,3 +44,9 @@ export default function LuminaSvg({className}) {
       </svg>
    )
 }
+
+LuminaSvg.propTypes = {
+   className: PropTypes.string,
+};
+
+

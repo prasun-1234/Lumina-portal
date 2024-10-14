@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import LogoutSvg from '../assets/LogoutSvg';
 
@@ -22,6 +22,14 @@ const UserProfile = ({ profilePic, userName, date, onLogout, className }) => {
          </Link>
       </div>
    );
+};
+
+UserProfile.propTypes = {
+   profilePic: PropTypes.string.isRequired,  
+   userName: PropTypes.string.isRequired,     
+   date: PropTypes.string.isRequired,          
+   onLogout: PropTypes.func.isRequired,       
+   className: PropTypes.string,                
 };
 
 export default UserProfile;

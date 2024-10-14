@@ -1,13 +1,12 @@
 import bodyImg from '../assets/body-frame.jpg'
-import LuminaSvg from '../assets/LuminaSvg'
 import { useState, useEffect } from 'react';
-import Header from '../components/Header';
 import { extractInnerText } from '../Hooks/ExtractText';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 import LuminaFormImg from '../assets/LuminaFormImg';
+import PropTypes from 'prop-types';
 
-export default function SignUp({ onFormSubmit}) {
+export default function SignUp({ onFormSubmit }) {
    const [formFields, setFormFields] = useState([]);
    const [formData, setFormData] = useState({});
    const [message, setMessage] = useState('');
@@ -122,18 +121,18 @@ export default function SignUp({ onFormSubmit}) {
                            <div key={field.id} className='w-full mt-8'>
                               <label htmlFor={`input_${field.id}`} className='text-[#626262]' >{field.label}</label>
                               <input
-                                 type={field.type} 
+                                 type={field.type}
                                  id={`input_${field.formId}_${field.id}`}
                                  name={`input_${field.id}`}
                                  value={formData[`input_${field.id}`] || ''}
                                  onChange={handleChange}
-                                 required={field.isRequired} 
-                                 placeholder={field.placeholder || ''} 
+                                 required={field.isRequired}
+                                 placeholder={field.placeholder || ''}
                                  className='block w-full mt-2 rounded-md border-0 py-3 px-6 text-[#626262] shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
                               />
                            </div>
                         ))}
-                        <button  className='mt-6 w-full max-w-[6.25rem] px-6 py-3  bg-[#6562ED] text-white rounded-md self-end'>Submit</button>
+                        <button className='mt-6 w-full max-w-[6.25rem] px-6 py-3  bg-[#6562ED] text-white rounded-md self-end'>Submit</button>
                      </form>
 
                      <figure className="lg:col-span-4 md:col-span-5 col-span-12 hidden md:flex w-full ">
@@ -150,5 +149,10 @@ export default function SignUp({ onFormSubmit}) {
       </>
    )
 }
+
+SignUp.propTypes = {
+   onFormSubmit: PropTypes.func.isRequired
+};
+
 
 

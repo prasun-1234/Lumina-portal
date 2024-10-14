@@ -1,6 +1,7 @@
 import LuminaHalf from '../assets/LuminaHalf'
 import UserProfile from './HeaderProfile'
 import ProfilePic from '../assets/profile-image.jpg'
+import PropTypes from 'prop-types';
 
 function Footer({ className, userProfile }) {
    return (
@@ -20,5 +21,14 @@ function Footer({ className, userProfile }) {
       </div>
    )
 }
+
+Footer.propTypes = {
+   userProfile: PropTypes.shape({
+      profilePic: PropTypes.string.isRequired, // Validate profilePic as a required string
+      userName: PropTypes.string.isRequired,    // Validate userName as a required string
+      date: PropTypes.string.isRequired,         // Validate date as a required string
+   }).isRequired, // Add validation for the onFormSubmit prop
+   className: PropTypes.string, // If className is also used
+};
 
 export default Footer

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ReportSvg from './assets/ReportSvg'
@@ -6,10 +6,11 @@ import PendingSvg from './assets/PendingSvg'
 import DownloadSvg from './assets/DownloadSvg'
 import DownloadAnimated from './assets/DownloadAnimated'
 import ScheduleSvgLumina from './assets/ScheduleSvgLumina'
+import PropTypes from 'prop-types';
 // import CompleteSvg from './assets/CompleteSvg'
 import completeLogo from './assets/Complete.png';
 
-function DashBoard({submitFormData}) {
+function DashBoard({ submitFormData }) {
    const formId = 1;
    const consumerKey = import.meta.env.VITE_CONSUMER_KEY;
    const consumerSecret = import.meta.env.VITE_CONSUMER_SECRET;
@@ -17,7 +18,7 @@ function DashBoard({submitFormData}) {
    // const [downloading, setDownloading] = useState(false);
    const [downloadingEntryId, setDownloadingEntryId] = useState(null);
    console.log(submitFormData, "submit form data");
-   
+
 
    useEffect(() => {
       // Fetch data from API here
@@ -135,5 +136,9 @@ function DashBoard({submitFormData}) {
    )
 }
 
+DashBoard.propTypes = {
+   submitFormData: PropTypes.func.isRequired, 
+   className: PropTypes.string,               
+};
 export default DashBoard
 

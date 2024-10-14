@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 
 export default function ScheduleSvgLumina({className}) {
    return (
@@ -22,3 +23,7 @@ export default function ScheduleSvgLumina({className}) {
       </>
    )
 }
+
+ScheduleSvgLumina.propTypes = {
+   className: PropTypes.string,
+};

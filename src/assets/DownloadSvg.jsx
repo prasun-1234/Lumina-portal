@@ -1,5 +1,6 @@
+import PropTypes from 'prop-types';
 
-export default function DownloadSvg({className}) {
+export default function DownloadSvg({ className }) {
    return (
       <>
          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" className={`${className}`}>
@@ -10,3 +11,7 @@ export default function DownloadSvg({className}) {
       </>
    )
 }
+
+DownloadSvg.propTypes = {
+   className: PropTypes.string,
+};
